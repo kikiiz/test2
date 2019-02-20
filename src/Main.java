@@ -1,3 +1,5 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
@@ -216,6 +218,35 @@ public class Main {
         }
     }
 
+    public static void demoOO(){
+        //封装、继承、多态
+    }
+
+    public static void demoFunction(){
+        //随机数、时间，常用类
+        Random ran = new Random();
+        //ran.setSeed(1);//指定种子，则不随机了；伪随机，随机种子
+        print(1,ran.nextInt(1000));
+        print(1,ran.nextInt(1000));
+        print(2,ran.nextDouble());//默认0~1
+
+        List<Integer> array=Arrays.asList(new Integer[]{1,2,3,4,5});
+        Collections.shuffle(array);//数组随机打乱
+        print(3,array);
+
+        Date date = new Date();
+        print(4,date);
+        print(5,date.getTime());//距离1970年1月1日的秒数，简化比较操作
+
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //指定date格式
+        print(6,df.format(date));
+
+        print(7,UUID.randomUUID());
+        print(8,Math.log(10));
+        print(9,Math.max(1,2));
+        print(10,Math.ceil(2.49));
+    }
     public static void main(String[] args) {
         //demoString();
         //demoControlFlow();
@@ -223,6 +254,7 @@ public class Main {
         //demoMapTable();//O(1)
         //demoSet();
         //demoException();
+        demoFunction();
     }
 
 }
